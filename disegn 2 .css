@@ -1,0 +1,350 @@
+:root {
+    --color-3: #c9ece8;
+    --color-2: #109383;
+    --color-fat: #016062;
+    --color-thin: #e7ffff;
+    --main-padding: 60px 15px 30px 15px;
+    --transition: .4s;
+
+}
+
+a {
+    text-decoration: none;
+}
+
+.bar {
+    background-color: var(--color-thin);
+    max-height: 100px;
+    margin-top: 0;
+    /* padding-bottom: 50px; */
+}
+
+.bar-cont {
+    text-transform: capitalize;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.logo a {
+    font-size: 29px;
+    font-weight: bolder;
+    color: #030d0d;
+    margin: 0 0 0 60px;
+
+}
+
+@media (max-width:500px) {
+    .logo a {
+        font-size: 22px;
+        margin: 0 0 0 10px;
+    }
+
+    .sign-up h3 {
+        font-size: .8em;
+        padding: 11px;
+        margin: auto;
+    }
+}
+
+.sign-up h3 {
+    font-size: 1.3em;
+    padding: 20px;
+    color: #030d0d;
+    border-radius: 0.625em;
+    background: var(--color-fat);
+    margin: 0 35px 20px 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+
+}
+
+.sign-up h3::after {
+    content: "";
+    position: absolute;
+    background-color: var(--color-3);
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-50deg) scale(0, 1);
+    transition: all var(--transition);
+
+
+}
+
+.sign-up h3:hover::after {
+    transform: skewX(-40deg) scale(1, 1);
+}
+
+.sign-up h3:hover {
+    color: var(--color-fat);
+}
+
+/* start landing */
+.landing {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+
+}
+
+.landing img {
+    width: 100%;
+    z-index: -1;
+
+}
+
+.landing-cont {
+    position: absolute;
+    top: 50%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 50%;
+    align-items: center;
+}
+
+.text-landing {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    font-size: 3em;
+    margin: 0 0 90px 0;
+    color: var(--color-fat);
+}
+
+.landing-form {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+}
+
+.landing-form input[type="email"] {
+    width: 30%;
+    border-radius: 5px;
+    caret-color: blue;
+
+}
+
+.landing-form input[type="email"]::placeholder {
+    transition: .9s;
+    font-size: 17px;
+    color: #030d0dcf;
+}
+
+.landing-form input[type="submit"] {
+    margin-left: 20px;
+    font-size: 22px;
+    background: var(--color-fat);
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .9s linear;
+    padding: 12px;
+}
+
+.landing-form input[type="submit"]:hover {
+    background: var(--color-3);
+}
+
+@media (min-width:501px) and (max-width:899px) {
+
+    .text-landing {
+        font-size: 1.7rem;
+        margin: 30px auto;
+        width: 80%;
+
+    }
+
+    .landing-cont {
+        top: 35%;
+
+    }
+
+
+
+}
+
+@media (max-width:500px) {
+    .landing-form input[type="submit"] {
+        margin: 0 20px;
+    }
+
+    .text-landing {
+        font-size: 1.5rem;
+        margin: 40px auto;
+        width: 90%;
+
+    }
+
+    .landing-cont {
+        top: auto;
+
+
+    }
+}
+
+/* start skill */
+.skill {
+    padding: var(--main-padding);
+    background-color: var(--color-thin);
+
+}
+
+.skill-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 70px;
+
+}
+
+.skill-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid rgb(0 0 0 / 37%);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.skill-card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    width: 0%;
+    height: 100%;
+    background-color: rgba(20, 16, 16, 0.388);
+    transition: var(--transition);
+}
+
+.skill-card:hover::after {
+    width: 100%;
+    z-index: 1;
+}
+
+
+.skill-card i {
+    font-size: 53px;
+    color: var(--color-fat);
+    color: var(--color-fat);
+}
+
+.skill-card p {
+    text-align: center;
+    width: 80%;
+    color: #00000096;
+    font-style: italic;
+}
+
+/* start coll */
+.coll {
+    padding: var(--main-padding);
+    /* background-color: var(--color-2); */
+}
+
+
+.coll-card {
+    display: flex;
+
+}
+
+.coll-card img {
+    width: 50%;
+}
+
+@media(max-width:790px) {
+    .coll-card {
+        display: block;
+
+    }
+
+    .coll-card img {
+        width: 100%;
+    }
+
+    .text-coll-card {
+        padding: 30px !important;
+    }
+}
+
+.text-coll-card {
+    padding: 90px;
+}
+
+.coll-card-rot {
+    flex-direction: row-reverse;
+}
+
+.text-coll-card h2 {
+    color: var(--color-2);
+}
+
+.text-coll-card p {
+    line-height: 1.3;
+    color: #00000096;
+        font-style: italic;
+}
+
+/* people */
+.people {
+    padding: var(--main-padding);
+    background-color: 248,
+        249,
+        250;
+}
+
+.people-cards {
+    display: flex;
+    /* flex-wrap: wrap; */
+    justify-content: center;
+        gap: 30px;
+
+}
+@media (max-width:900px) {
+    .people-cards {
+            flex-wrap: wrap;
+      
+    
+        }
+}
+
+.people-card {
+    position: relative;
+        display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-wrap: wrap;
+}
+
+.people-card img {
+    border-radius: 50%;
+        width: 40%;
+        margin: 20px auto;
+border: 2px #0000006b solid;       
+}
+
+.people-card h3 {
+    /* text-align: center; */
+        font-size: 1.3em;
+        color: var(--color-fat);
+}
+
+.people-card p {
+    /* text-align: center; */
+    line-height: 1.3;
+        /* color: #000000da; */
+        font-style: italic;
+        font-size: 1.03em;
+}
